@@ -1,7 +1,7 @@
 {
   "name": "word-wrap",
   "description": "Wrap words.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/word-wrap",
   "author": {
     "name": "Jon Schlinkert",
@@ -35,10 +35,10 @@
   "scripts": {
     "test": "mocha -R test"
   },
-  "devDependencies": {
-    "verb": "~0.1.20"
-  },
   "dependencies": {
     "longest": "~0.2.1"
+  },
+  "devDependencies": {
+    "verb": "~0.2.2"
   }
 }
