@@ -1,5 +1,10 @@
-/**
- * An optimized version of http://james.padolsey.com/javascript/wordwrap-for-javascript/
+/*!
+ * word-wrap <https://github.com/jonschlinkert/word-wrap>
+ *
+ * Copyright (c) 2014, Jon Schlinkert, contributors.
+ * Licensed under the MIT License
+ *
+ * Adapted from http://james.padolsey.com/javascript/wordwrap-for-javascript/
  */
 
 module.exports = function(str, options) {
