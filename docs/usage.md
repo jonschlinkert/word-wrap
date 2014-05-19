@@ -24,6 +24,11 @@ Default: `50`
 
 The width of the text before wrapping to a new line.
 
+Example:
+
+```js
+wrap(str, {width: 60})
+```
 
 ### indent
 
@@ -33,6 +38,11 @@ Default: `  ` (two spaces)
 
 The string to use at the beginning of each line.
 
+Example:
+
+```js
+wrap(str, {indent: '      '})
+```
 
 ### newline
 
@@ -41,3 +51,9 @@ Type: `String`
 Default: `\n`
 
 The string to use at the end of each line.
+
+Example:
+
+```js
+wrap(str, {newline: '\n\n'})
+```
