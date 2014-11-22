@@ -14,7 +14,7 @@ module.exports = function(str, options) {
   }
 
   var width = options.width || 50;
-  var indent = typeof(options.indent === undefined) ? '  ' : options.indent;
+  var indent = (typeof options.indent === 'undefined') ? '  ' : options.indent;
   var newline = options.newline || '\n' + indent;
 
   var re = new RegExp('.{1,' + width + '}(\\s|$)|\\S+?(\\s|$)', 'g');
