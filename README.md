@@ -83,7 +83,7 @@ wrap(str, {newline: '\n\n'})
 
 ## License
 Copyright (c) 2014 Jon Schlinkert  
-Released under the MIT license
+Released under the ,  licenses
 
 ***
 
