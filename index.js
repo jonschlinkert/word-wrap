@@ -23,7 +23,7 @@ module.exports = function(str, options) {
   var re = new RegExp('.{1,' + width + '}(\\s|$)|\\S+?(\\s|$)', 'g');
   var res = indent + str.match(re).join(newline);
   if (options.trim === true) {
-    res = res.replace(/\s+$/, '');
+    res = res.replace(/\s*$/, '');
   }
   return res;
 };
