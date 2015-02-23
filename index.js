@@ -21,7 +21,8 @@ module.exports = function(str, options) {
   var newline = options.newline || '\n' + indent;
 
   var re = new RegExp('.{1,' + width + '}(\\s|$)|\\S+?(\\s|$)', 'g');
-  var res = indent + str.match(re).join(newline);
+  var lines = str.match(re) || [];
+  var res = indent + lines.join(newline);
   if (options.trim === true) {
     res = res.replace(/[ \t]*$/gm, '');
   }
