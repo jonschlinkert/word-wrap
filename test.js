@@ -33,5 +33,9 @@ describe('wrap', function () {
   it('should trim trailing whitespace:', function () {
     wrap(str, {trim: true}).should.equal('  A project without documentation is like a project\n  that doesn\'t exist. Verb solves this by making it\n  dead simple to generate project documentation,\n  using simple markdown templates, with zero\n  configuration required.');
   });
+
+  it('should handle strings with just newlines', function () {
+    wrap('\r\n', {indent: '\r\n', width: 18}).should.equal('\r\n');
+  });
 });
 
