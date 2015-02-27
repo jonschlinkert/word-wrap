@@ -2,7 +2,6 @@
 
 > Wrap words to a specified length.
 
-## Install
 ## Install with [npm](npmjs.org)
 
 ```bash
