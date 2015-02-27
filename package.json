@@ -18,12 +18,19 @@
     "type": "MIT",
     "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
   },
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
   "engines": {
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "should": "^4.3.0"
   },
   "keywords": [
     "break",
@@ -38,8 +45,5 @@
     "word-wrap",
     "words",
     "wrap"
-  ],
-  "devDependencies": {
-    "should": "^4.3.0"
-  }
+  ]
 }

@@ -1,13 +1,36 @@
 {
   "name": "word-wrap",
-  "version": "0.2.0",
-  "main": [
-    "index.js"
-  ],
+  "description": "Wrap words to a specified length.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/word-wrap.git"
+  },
+  "homepage": "https://github.com/jonschlinkert/word-wrap",
   "authors": [
     {
       "name": "Jon Schlinkert",
       "homepage": "http://github.com/jonschlinkert/"
     }
+  ],
+  "main": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "should": "^4.3.0"
+  },
+  "keywords": [
+    "break",
+    "line",
+    "new-line",
+    "carriage",
+    "newline",
+    "return",
+    "soft",
+    "text",
+    "word",
+    "word-wrap",
+    "words",
+    "wrap"
   ]
 }

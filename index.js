@@ -1,8 +1,8 @@
 /*!
  * word-wrap <https://github.com/jonschlinkert/word-wrap>
  *
- * Copyright (c) 2014, Jon Schlinkert, contributors.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  *
  * Adapted from http://james.padolsey.com/javascript/wordwrap-for-javascript/
  */
