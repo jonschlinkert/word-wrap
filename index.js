@@ -5,6 +5,7 @@
  * Licensed under the MIT License.
  *
  * Adapted from http://james.padolsey.com/javascript/wordwrap-for-javascript/
+ * @attribution
  */
 
 module.exports = function(str, options) {
@@ -14,15 +15,16 @@ module.exports = function(str, options) {
   }
 
   var width = options.width || 50;
-  var indent = (typeof options.indent === 'undefined')
-    ? '  '
-    : options.indent;
+  var indent = (typeof options.indent === 'string')
+    ? options.indent
+    : '  ';
 
   var newline = options.newline || '\n' + indent;
 
   var re = new RegExp('.{1,' + width + '}(\\s|$)|\\S+?(\\s|$)', 'g');
   var lines = str.match(re) || [];
   var res = indent + lines.join(newline);
+
   if (options.trim === true) {
     res = res.replace(/[ \t]*$/gm, '');
   }
