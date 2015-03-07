@@ -11,6 +11,7 @@ var assert = require('assert');
 var should = require('should');
 var wrap = require('./');
 
+
 var str = 'A project without documentation is like a project that doesn\'t exist. Verb solves this by making it dead simple to generate project documentation, using simple markdown templates, with zero configuration required.        ';
 
 describe('wrap', function () {
