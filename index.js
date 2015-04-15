@@ -21,7 +21,7 @@ module.exports = function(str, options) {
 
   var newline = options.newline || '\n' + indent;
 
-  var re = new RegExp('.{1,' + width + '}(\\s|$)|\\S+?(\\s|$)', 'g');
+  var re = new RegExp('.{1,' + width + '}(\\s+|$)|\\S+?(\\s+|$)', 'g');
   var lines = str.match(re) || [];
   var res = indent + lines.join(newline);
 
