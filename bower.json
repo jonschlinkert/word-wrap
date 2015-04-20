@@ -5,6 +5,10 @@
     "type": "git",
     "url": "git://github.com/jonschlinkert/word-wrap.git"
   },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE"
+  },
   "homepage": "https://github.com/jonschlinkert/word-wrap",
   "authors": [
     {
