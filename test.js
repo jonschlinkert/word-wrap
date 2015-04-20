@@ -38,5 +38,9 @@ describe('wrap', function () {
   it('should handle strings with just newlines', function () {
     wrap('\r\n', {indent: '\r\n', width: 18}).should.equal('\r\n');
   });
-});
 
+  it('should handle strings that break where there are multiple spaces', function() {
+    wrap('foo foo.  bar', {width:8}).should.equal('  foo foo.  \n  bar');
+    wrap('foo foo.  bar', {width:8, trim: true}).should.equal('  foo foo.\n  bar');
+  })
+});
