@@ -42,5 +42,14 @@ describe('wrap', function () {
   it('should handle strings that break where there are multiple spaces', function() {
     wrap('foo foo.  bar', {width:8}).should.equal('  foo foo.  \n  bar');
     wrap('foo foo.  bar', {width:8, trim: true}).should.equal('  foo foo.\n  bar');
+  });
+
+  it('should cut one long word', function() {
+    wrap('Supercalifragilisticexpialidocious', {width:24, cut:true}).should.equal('  Supercalifragilisticexpi\n  alidocious');
+  });
+
+  it('should cut long words', function() {
+    wrap('Supercalifragilisticexpialidocious and Supercalifragilisticexpialidocious', {width:24, cut:true}).should.equal('  Supercalifragilisticexpi\n  alidocious and Supercali\n  fragilisticexpialidociou\n  s');
   })
+
 });
