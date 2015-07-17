@@ -93,6 +93,21 @@ wrap(str, {trim: true});
 ```
 
 
+### options.cut
+
+Type: `Boolean`
+
+Default: `false`
+
+The string is always wrapped at the specified width. So if you have a word that is larger than the given width, it is broken apart.
+
+**Example:**
+
+```js
+wrap(str, {cut: true});
+```
+
+
 ## Related projects
  * [wordcount](https://github.com/jonschlinkert/wordcount): Count the words in string. Has basic support for Cyrillic and CJK.
  * [unique-words](https://github.com/jonschlinkert/unique-words): Return the unique words in a string or array.
