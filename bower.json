@@ -1,27 +1,17 @@
 {
   "name": "word-wrap",
   "description": "Wrap words to a specified length.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/word-wrap.git"
-  },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE"
-  },
+  "repository": "jonschlinkert/word-wrap",
+  "license": "MIT",
   "homepage": "https://github.com/jonschlinkert/word-wrap",
   "authors": [
-    {
-      "name": "Jon Schlinkert",
-      "homepage": "http://github.com/jonschlinkert/"
-    }
+    "Jon Schlinkert (https://github.com/jonschlinkert)"
   ],
   "main": [
     "index.js"
   ],
   "devDependencies": {
-    "mocha": "^2.1.0",
-    "should": "^4.3.0"
+    "mocha": "*"
   },
   "keywords": [
     "break",
