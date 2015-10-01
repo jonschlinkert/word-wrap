@@ -23,6 +23,13 @@ describe('wrap', function () {
     assert.equal(wrap(str, {newline: '\n\n-'}), '  A project without documentation is like a project \n\n-that doesn\'t exist. Verb solves this by making it \n\n-dead simple to generate project documentation, \n\n-using simple markdown templates, with zero \n\n-configuration required.        ');
   });
 
+  it('should run the escape function on each line', function () {
+    assert.equal(
+      wrap(str, {escape: function(e) {return e.replace('\'', '\\\'')}}),
+      '  A project without documentation is like a project \n  that doesn\\\'t exist. Verb solves this by making it \n  dead simple to generate project documentation, \n  using simple markdown templates, with zero \n  configuration required.        '
+    )
+  });
+
   it('should trim trailing whitespace:', function () {
     assert.equal(wrap(str, {trim: true}), '  A project without documentation is like a project\n  that doesn\'t exist. Verb solves this by making it\n  dead simple to generate project documentation,\n  using simple markdown templates, with zero\n  configuration required.');
   });

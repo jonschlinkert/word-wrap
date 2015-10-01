@@ -21,6 +21,13 @@ module.exports = function(str, options) {
 
   var newline = options.newline || '\n' + indent;
 
+  function identity(str) { 
+    return str; 
+  };
+  var escape = typeof options.escape === 'function'
+    ? options.escape
+    : identity;
+
   var re = new RegExp('.{1,' + width + '}(\\s+|$)|\\S+?(\\s+|$)', 'g');
 
   if (options.cut) {
@@ -28,7 +35,7 @@ module.exports = function(str, options) {
   }
 
   var lines = str.match(re) || [];
-  var res = indent + lines.join(newline);
+  var res = indent + lines.map(escape).join(newline);
 
   if (options.trim === true) {
     res = res.replace(/[ \t]*$/gm, '');
