@@ -119,6 +119,30 @@ Break a word between any two letters when the word is longer than the specified 
 wrap(str, {cut: true});
 ```
 
+### options.amendOrphan
+
+Type: `Boolean`
+
+Default: `false`
+
+Amends the last line in the case it has one word.  Only occurs when:
+ - there's more than one line,
+ - the second to last line has more than one word
+ - the amended line would not pass [width](#options.width)
+ - [options.cut](#options.cut) is not true.
+
+**Example:**
+
+```js
+//                  1
+//         12345678901234567
+var str = 'This is an orphan';
+wrap(str, {width: 10, amendOrphan: true});
+// returns
+//  This is
+//  an orphan
+```
+
 ## Related projects
 
 * [common-words](https://www.npmjs.com/package/common-words): Updated list (JSON) of the 100 most common words in the English language. Useful for… [more](https://www.npmjs.com/package/common-words) | [homepage](https://github.com/jonschlinkert/common-words)
