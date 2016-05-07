@@ -128,8 +128,7 @@ Default: `false`
 Amends the last line in the case it has one word.  Only occurs when:
  - there's more than one line,
  - the second to last line has more than one word
- - the amended line would not pass [width](#options.width)
- - [options.cut](#options.cut) is not true.
+ - the amended line would not pass [width](#options.width).
 
 **Example:**
 

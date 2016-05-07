@@ -61,5 +61,11 @@ describe('wrap', function () {
 
     // don't handle if the amended line length would be greater than width
     assert.equal(wrap("Don't amend orphan", {width:11, amendOrphan:true}), "  Don't amend \n  orphan");
+
+    // handle when cut = true
+    assert.equal(wrap('What a Supercalif', {width:10, amendOrphan:true, cut:true}), '  What a \n  Supercalif');
+
+    // except when the amended cut line has length > width
+    assert.equal(wrap('What a Supercalif', {width:9, amendOrphan:true, cut:true}), '  What a Su\n  percalif');
   });
 });

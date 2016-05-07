@@ -28,18 +28,22 @@ module.exports = function(str, options) {
     ? options.escape
     : identity;
 
-  var re = new RegExp('.{1,' + width + '}(\\s+|$)|\\S+?(\\s+|$)', 'g');
+  var re = new RegExp('.{1,' + width + '}(\\s+|$)|\\S+?(\\s+|$)', 'g')
+    , wasCutMidWord = false;
 
   if (options.cut) {
     re = new RegExp('.{1,' + width + '}', 'g');
+    // if the character right before the last line is not whitespace, then the
+    //   line was cut mid-word.
+    wasCutMidWord = !str.charAt(str.length - (str.length % width) - 1).match(/\s/);
   }
 
   var lines = str.match(re) || [];
 
   // Incompatible with cut because there's no easy way to determine whether
   //   the last line was cut mid-word
-  if (!options.cut && options.amendOrphan === true) {
-    lines = handleOrphan(lines, width);
+  if (options.amendOrphan === true) {
+    lines = handleOrphan(lines, width, wasCutMidWord);
   }
 
   var res = indent + lines.map(escape).join(newline);
@@ -50,14 +54,14 @@ module.exports = function(str, options) {
   return res;
 };
 
-function handleOrphan(lines, width) {
+function handleOrphan(lines, width, wasCutMidWord) {
   var len = lines.length
     // WS: word separator
     , WS = /\s+/
     , lastLine = lines[len - 1]
     , secondToLastLine = lines[len - 2]
     , orphanAdopter = getLastWord(secondToLastLine)
-    , amendedLastLine = orphanAdopter + ' ' + lastLine;
+    , amendedLastLine = orphanAdopter + (wasCutMidWord ? '' : ' ') + lastLine;
 
   // we only want to handle orphans when:
   //  - there's more than one line,
