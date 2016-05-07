@@ -8,6 +8,9 @@
  * @attribution
  */
 
+// WS: word separator
+var WS = /\s+/;
+
 module.exports = function(str, options) {
   options = options || {};
   if (str == null) {
@@ -35,7 +38,7 @@ module.exports = function(str, options) {
     re = new RegExp('.{1,' + width + '}', 'g');
     // if the character right before the last line is not whitespace, then the
     //   line was cut mid-word.
-    wasCutMidWord = !str.charAt(str.length - (str.length % width) - 1).match(/\s/);
+    wasCutMidWord = !str.charAt(str.length - (str.length % width) - 1).match(WS);
   }
 
   var lines = str.match(re) || [];
@@ -56,8 +59,6 @@ module.exports = function(str, options) {
 
 function handleOrphan(lines, width, wasCutMidWord) {
   var len = lines.length
-    // WS: word separator
-    , WS = /\s+/
     , lastLine = lines[len - 1]
     , secondToLastLine = lines[len - 2]
     , orphanAdopter = getLastWord(secondToLastLine)
