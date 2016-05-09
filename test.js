@@ -49,6 +49,23 @@ describe('wrap', function () {
 
   it('should cut long words', function() {
     assert.equal(wrap('Supercalifragilisticexpialidocious and Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious and Supercali\n  fragilisticexpialidociou\n  s');
-  })
+  });
 
+  it('should handle orphans', function() {
+    assert.equal(wrap('This is an orphan', {width:10, amendOrphan:true}), '  This is \n  an orphan');
+
+    // handle more than a single whitespace character between orphan and orphan adopter to keep existing functionality
+    assert.equal(wrap('This is \t  an orphan', {width:10, amendOrphan:true}), '  This is \t  \n  an orphan');
+
+    assert.equal(wrap('Nope, no orphan here', {width:11, amendOrphan:true}), '  Nope, no \n  orphan here');
+
+    // don't handle if the amended line length would be greater than width
+    assert.equal(wrap("Don't amend orphan", {width:11, amendOrphan:true}), "  Don't amend \n  orphan");
+
+    // handle when cut = true
+    assert.equal(wrap('What a Supercalif', {width:10, amendOrphan:true, cut:true}), '  What a \n  Supercalif');
+
+    // except when the amended cut line has length > width
+    assert.equal(wrap('What a Supercalif', {width:9, amendOrphan:true, cut:true}), '  What a Su\n  percalif');
+  });
 });
