@@ -58,19 +58,19 @@ module.exports = function(str, options) {
 };
 
 function handleOrphan(lines, width, wasCutMidWord) {
-  var len = lines.length
-    , lastLine = lines[len - 1]
+  var len = lines.length;
+  if (len <= 1) return lines;
+
+  var lastLine = lines[len - 1]
     , secondToLastLine = lines[len - 2]
     , orphanAdopter = getLastWord(secondToLastLine)
     , amendedLastLine = orphanAdopter + (wasCutMidWord ? '' : ' ') + lastLine;
 
   // we only want to handle orphans when:
-  //  - there's more than one line,
   //  - the second to last line has more than one word
   //  - the last line has only a single word
   //  - the amended line would not pass width
-  var shouldHandleOrphan = len > 1
-    && secondToLastLine.trim()
+  var shouldHandleOrphan = secondToLastLine.trim()
       .split(WS)
       .length > 1
     &&  lastLine.trim()
