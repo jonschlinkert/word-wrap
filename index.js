@@ -21,8 +21,8 @@ module.exports = function(str, options) {
 
   var newline = options.newline || '\n' + indent;
 
-  function identity(str) { 
-    return str; 
+  function identity(str) {
+    return str;
   };
   var escape = typeof options.escape === 'function'
     ? options.escape
@@ -35,6 +35,9 @@ module.exports = function(str, options) {
   }
 
   var lines = str.match(re) || [];
+  //strip any remaining newline characters at the end of the lines, these could
+  //be there due to newline characters in the input text
+  lines = lines.map(function (line) {return line.replace(/(\r\n|\n|\r)$/gm,'')});
   var res = indent + lines.map(escape).join(newline);
 
   if (options.trim === true) {
