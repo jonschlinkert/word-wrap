@@ -51,4 +51,10 @@ describe('wrap', function () {
     assert.equal(wrap('Supercalifragilisticexpialidocious and Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious and Supercali\n  fragilisticexpialidociou\n  s');
   })
 
+  it('should be able to handle existing newlines', function() {
+    assert.equal(wrap('a\nb'), '  a\n  b');
+    assert.equal(wrap('a\r\nb', {newline:'\r\n'}), '  a\r\nb');
+    assert.equal(wrap('a\r\nb', {newline:'<whatever>'}), '  a<whatever>b');
+  })
+
 });
