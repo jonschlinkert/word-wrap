@@ -49,6 +49,12 @@ describe('wrap', function () {
 
   it('should cut long words', function() {
     assert.equal(wrap('Supercalifragilisticexpialidocious and Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious and Supercali\n  fragilisticexpialidociou\n  s');
-  })
+  });
 
+  it('should wrap on zero space characters', function () {
+    assert.equal(
+      wrap('Supercalifragilistic\u200Bexpialidocious', {width: 24}),
+      '  Supercalifragilistic\u200B\n  expialidocious'
+    );
+  });
 });

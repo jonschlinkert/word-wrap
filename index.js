@@ -8,6 +8,9 @@
  * @attribution
  */
 
+var spaceMatch = '[\\s\u200B]';
+var nonSpaceMatch = '[^\\s\u200B]'
+
 module.exports = function(str, options) {
   options = options || {};
   if (str == null) {
@@ -28,7 +31,8 @@ module.exports = function(str, options) {
     ? options.escape
     : identity;
 
-  var re = new RegExp('.{1,' + width + '}(\\s+|$)|\\S+?(\\s+|$)', 'g');
+  var re = new RegExp('.{1,' + width + '}(' + spaceMatch + '+|$)|' + nonSpaceMatch + '+?(' +
+    spaceMatch + '+|$)', 'g');
 
   if (options.cut) {
     re = new RegExp('.{1,' + width + '}', 'g');
