@@ -1,6 +1,6 @@
 'use strict';
 
-/* deps: mocha */
+require('mocha');
 var assert = require('assert');
 var wrap = require('./');
 
@@ -36,6 +36,11 @@ describe('wrap', function () {
 
   it('should handle strings with just newlines', function () {
     assert.equal(wrap('\r\n', {indent: '\r\n', width: 18}), '\r\n');
+  });
+
+  it('should handle newlines that occur at the same position as `options.width`', function () {
+    assert.equal(wrap('asdfg\nqwert', {width:5}), '  asdfg\n  qwert');
+    assert.equal(wrap('aaaaaa\nbbbbbb\ncccccc', {width:6}), '  aaaaaa\n  bbbbbb\n  cccccc');
   });
 
   it('should handle strings that break where there are multiple spaces', function() {
