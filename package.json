@@ -20,13 +20,14 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "*"
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "break",
+    "carriage",
     "line",
     "new-line",
-    "carriage",
     "newline",
     "return",
     "soft",
@@ -35,5 +36,30 @@
     "word-wrap",
     "words",
     "wrap"
-  ]
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "wordcount",
+        "unique-words",
+        "common-words",
+        "shuffle-words"
+      ]
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ]
+  }
 }
