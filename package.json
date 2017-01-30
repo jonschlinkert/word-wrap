@@ -13,6 +13,7 @@
     "index.js"
   ],
   "main": "index.js",
+  "typings": "index.d.ts",
   "engines": {
     "node": ">=0.8"
   },
@@ -51,10 +52,10 @@
     },
     "related": {
       "list": [
-        "wordcount",
-        "unique-words",
         "common-words",
-        "shuffle-words"
+        "shuffle-words",
+        "unique-words",
+        "wordcount"
       ]
     },
     "reflinks": [
