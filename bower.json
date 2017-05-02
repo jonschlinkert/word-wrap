@@ -11,13 +11,14 @@
     "index.js"
   ],
   "devDependencies": {
-    "mocha": "*"
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "break",
+    "carriage",
     "line",
     "new-line",
-    "carriage",
     "newline",
     "return",
     "soft",
@@ -26,5 +27,34 @@
     "word-wrap",
     "words",
     "wrap"
+  ],
+  "version": "1.2.1",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/word-wrap/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "typings": "index.d.ts",
+  "ignore": [
+    "actual",
+    "bower_components",
+    "fixtures",
+    "node_modules",
+    "temp",
+    "test",
+    "test.js",
+    "tmp"
+  ],
+  "types": "index.d.ts",
+  "contributors": [
+    "Danilo Sampaio <danilo.sampaio@gmail.com> (localhost:8080)",
+    "Fede Ramirez <i@2fd.me> (https://2fd.github.io)",
+    "Joe Hildebrand <joe-github@cursive.net> (https://twitter.com/hildjj)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Todd Kennedy (https://tck.io)",
+    "Waldemar Reusch (https://github.com/lordvlad)",
+    "Wolfgang Faust (http://www.linestarve.com)",
+    "Zach Hale <zachhale@gmail.com> (http://zachhale.com)"
   ]
 }

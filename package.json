@@ -4,6 +4,16 @@
   "version": "1.2.1",
   "homepage": "https://github.com/jonschlinkert/word-wrap",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Danilo Sampaio <danilo.sampaio@gmail.com> (localhost:8080)",
+    "Fede Ramirez <i@2fd.me> (https://2fd.github.io)",
+    "Joe Hildebrand <joe-github@cursive.net> (https://twitter.com/hildjj)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Todd Kennedy (https://tck.io)",
+    "Waldemar Reusch (https://github.com/lordvlad)",
+    "Wolfgang Faust (http://www.linestarve.com)",
+    "Zach Hale <zachhale@gmail.com> (http://zachhale.com)"
+  ],
   "repository": "jonschlinkert/word-wrap",
   "bugs": {
     "url": "https://github.com/jonschlinkert/word-wrap/issues"
@@ -13,9 +23,8 @@
     "index.js"
   ],
   "main": "index.js",
-  "typings": "index.d.ts",
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha"
@@ -38,6 +47,7 @@
     "words",
     "wrap"
   ],
+  "typings": "index.d.ts",
   "verb": {
     "toc": false,
     "layout": "default",
