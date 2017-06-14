@@ -14,7 +14,7 @@ module.exports = function(str, options) {
   var width = options.width || 50;
   var indent = (typeof options.indent === 'string')
     ? options.indent
-    : '  ';
+    : '';
 
   var newline = options.newline || '\n' + indent;
   var escape = typeof options.escape === 'function'

@@ -50,7 +50,7 @@ wrap(str, {width: 60});
 
 Type: `String`
 
-Default: `` (two spaces)
+Default: `` (none)
 
 The string to use at the beginning of each line.
 
