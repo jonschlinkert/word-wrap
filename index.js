@@ -1,9 +1,15 @@
 /*!
  * word-wrap <https://github.com/jonschlinkert/word-wrap>
  *
- * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Copyright (c) 2014-2023, Jon Schlinkert.
  * Released under the MIT License.
  */
+
+function trimTabAndSpaces(str) {
+  const lines = str.split('\n');
+  const trimmedLines = lines.map((line) => line.trimEnd());
+  return trimmedLines.join('\n');
+}
 
 module.exports = function(str, options) {
   options = options || {};
@@ -36,7 +42,7 @@ module.exports = function(str, options) {
   }).join(newline);
 
   if (options.trim === true) {
-    result = result.replace(/[ \t]*$/gm, '');
+    result = trimTabAndSpaces(result);
   }
   return result;
 };
