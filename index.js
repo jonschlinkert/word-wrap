@@ -5,12 +5,6 @@
  * Released under the MIT License.
  */
 
-function trimTabAndSpaces(str) {
-  const lines = str.split('\n');
-  const trimmedLines = lines.map((line) => line.trimEnd());
-  return trimmedLines.join('\n');
-}
-
 module.exports = function(str, options) {
   options = options || {};
   if (str == null) {
@@ -42,7 +36,7 @@ module.exports = function(str, options) {
   }).join(newline);
 
   if (options.trim === true) {
-    result = trimTabAndSpaces(result);
+    result = result.replace(/\s+$/g, '');
   }
   return result;
 };
