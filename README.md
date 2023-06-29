@@ -1,4 +1,4 @@
-# word-wrap [![NPM version](https://img.shields.io/npm/v/word-wrap.svg?style=flat)](https://www.npmjs.com/package/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/word-wrap.svg?style=flat)](https://npmjs.org/package/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/word-wrap.svg?style=flat)](https://npmjs.org/package/word-wrap) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/word-wrap.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/word-wrap)
+# word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap)
 
 > Wrap words to a specified length.
 
