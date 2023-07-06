@@ -1,4 +1,4 @@
-# word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap)
+# word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/aashutoshrathi/word-wrap/ci.yml?style=flat)
 
 > Wrap words to a specified length.
 
