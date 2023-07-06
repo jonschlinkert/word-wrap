@@ -8,7 +8,6 @@ Install with [npm](https://www.npmjs.com/):
 
 ```sh
 $ npm install --save @aashutoshrathi/word-wrap
-
 ```
 
 ## Usage
