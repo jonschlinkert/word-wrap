@@ -10,6 +10,26 @@ Install with [npm](https://www.npmjs.com/):
 $ npm install --save @aashutoshrathi/word-wrap
 ```
 
+## Deep Dependencies Workaround
+
+If you are running `yarn audit` or `npm audit` and you get failures like `"word-wrap vulnerable to Regular Expression Denial of Service"` here is a work around if one of your dependencies is still using an old version of the original library.
+
+**YARN**
+
+```json
+"resolutions": {
+  "word-wrap": "@aashutoshrathi/word-wrap"
+}
+```
+
+**NPM (8 or higher)**
+
+```json
+"overrides": {
+  "word-wrap" : "@aashutoshrathi/word-wrap"
+}
+```
+
 ## Usage
 
 ```js
