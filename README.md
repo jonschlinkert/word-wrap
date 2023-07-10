@@ -1,4 +1,4 @@
-# word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap)
+# word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/aashutoshrathi/word-wrap/ci.yml?style=flat)
 
 > Wrap words to a specified length.
 
@@ -7,13 +7,33 @@
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install --save word-wrap
+$ npm install --save @aashutoshrathi/word-wrap
+```
+
+## Deep Dependencies Workaround
+
+If you are running `yarn audit` or `npm audit` and you get failures like `"word-wrap vulnerable to Regular Expression Denial of Service"` here is a work around if one of your dependencies is still using an old version of the original library.
+
+**YARN**
+
+```json
+"resolutions": {
+  "word-wrap": "@aashutoshrathi/word-wrap"
+}
+```
+
+**NPM (8 or higher)**
+
+```json
+"overrides": {
+  "word-wrap" : "@aashutoshrathi/word-wrap"
+}
 ```
 
 ## Usage
 
 ```js
-var wrap = require('word-wrap');
+var wrap = require('@aashutoshrathi/word-wrap');
 
 wrap('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
 ```

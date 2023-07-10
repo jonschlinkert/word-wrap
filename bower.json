@@ -1,9 +1,9 @@
 {
   "name": "word-wrap",
   "description": "Wrap words to a specified length.",
-  "repository": "jonschlinkert/word-wrap",
+  "repository": "aashutoshrathi/word-wrap",
   "license": "MIT",
-  "homepage": "https://github.com/jonschlinkert/word-wrap",
+  "homepage": "https://github.com/aashutoshrathi/word-wrap",
   "authors": [
     "Jon Schlinkert (https://github.com/jonschlinkert)"
   ],
@@ -30,7 +30,7 @@
   ],
   "version": "1.2.1",
   "bugs": {
-    "url": "https://github.com/jonschlinkert/word-wrap/issues"
+    "url": "https://github.com/aashutoshrathi/word-wrap/issues"
   },
   "files": [
     "index.js"

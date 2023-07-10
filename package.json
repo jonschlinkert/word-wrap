@@ -1,7 +1,7 @@
 {
   "name": "@aashutoshrathi/word-wrap",
   "description": "Wrap words to a specified length.",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "homepage": "https://github.com/aashutoshrathi/word-wrap",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
