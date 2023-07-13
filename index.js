@@ -5,6 +5,21 @@
  * Released under the MIT License.
  */
 
+function trimEnd(str) {
+  let lastCharPos = str.length - 1;
+  let lastChar = str[lastCharPos];
+  while(lastChar === ' ' || lastChar === '\t') {
+    lastChar = str[--lastCharPos];
+  }
+  return str.substring(0, lastCharPos + 1);
+}
+
+function trimTabAndSpaces(str) {
+  const lines = str.split('\n');
+  const trimmedLines = lines.map((line) => trimEnd(line));
+  return trimmedLines.join('\n');
+}
+
 module.exports = function(str, options) {
   options = options || {};
   if (str == null) {
@@ -36,7 +51,7 @@ module.exports = function(str, options) {
   }).join(newline);
 
   if (options.trim === true) {
-    result = result.replace(/\s+$/g, '');
+    result = trimTabAndSpaces(result);
   }
   return result;
 };
