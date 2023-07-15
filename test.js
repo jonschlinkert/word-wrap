@@ -35,7 +35,7 @@ describe('wrap', function () {
   });
 
   it('should trim trailing whitespace (even for empty lines):', function () {
-    assert.equal(wrap("a \n\nb \n \nc\t", {trim: true}), 'a\nb\nc');
+    assert.equal(wrap("a \n\nb \n \nc\t", {trim: true}), 'a\n\nb\n\nc');
   });
 
   it('should handle strings with just newlines', function () {
