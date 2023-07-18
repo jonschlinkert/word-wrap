@@ -34,6 +34,10 @@ describe('wrap', function () {
     assert.equal(wrap(str, {trim: true}), 'A project without documentation is like a project\nthat doesn\'t exist. Verb solves this by making it\ndead simple to generate project documentation,\nusing simple markdown templates, with zero\nconfiguration required.');
   });
 
+  it('should trim trailing whitespace (even for empty lines):', function () {
+    assert.equal(wrap("a \n\nb \n \nc\t", {trim: true}), 'a\n\nb\n\nc');
+  });
+
   it('should handle strings with just newlines', function () {
     assert.equal(wrap('\r\n', {indent: '\r\n', width: 18}), '\r\n');
   });
