@@ -6,8 +6,8 @@
  */
 
 function trimEnd(str) {
-  let lastCharPos = str.length - 1;
-  let lastChar = str[lastCharPos];
+  var lastCharPos = str.length - 1;
+  var lastChar = str[lastCharPos];
   while(lastChar === ' ' || lastChar === '\t') {
     lastChar = str[--lastCharPos];
   }
