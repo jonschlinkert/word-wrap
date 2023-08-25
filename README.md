@@ -1,3 +1,10 @@
+> [!NOTE]  
+> If you came here looking for what this package is, as it showed up on top of your node_modules. This is probably a dependency of [Optionator](https://www.npmjs.com/package/optionator) in your project.
+
+> **Why this fork?**
+
+> word-wrap had a high rank vulnerability ([CVE-2023-26115](https://security.snyk.io/vuln/SNYK-JS-WORDWRAP-3149973)) which is now fixed in [this PR](https://github.com/jonschlinkert/word-wrap/pull/33) and now the main package can be used too. It was taking time to merge that PR so, some projects shifted to this fork of the project.
+
 # word-wrap [![NPM version](https://img.shields.io/npm/v/%40aashutoshrathi/word-wrap.svg?style=flat)](https://www.npmjs.com/package/%40aashutoshrathi/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/%40aashutoshrathi/word-wrap.svg?style=flat)](https://npmjs.org/package/%40aashutoshrathi/word-wrap) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/aashutoshrathi/word-wrap/ci.yml?style=flat)
 
 > Wrap words to a specified length.
