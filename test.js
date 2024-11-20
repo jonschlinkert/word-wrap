@@ -66,4 +66,18 @@ describe('wrap', function () {
       '  Supercalifragilistic\u200B\n  expialidocious'
     );
   });
+
+  it('should preserve whitespace after a newline', function() {
+    assert.equal(
+      wrap('Highlights:\n First\n Second\n Third', { indent: '' }),
+      'Highlights:\n First\n Second\n Third'
+    );
+  });
+
+  it('should preserve whitespace after a newline and handle indents appropriately', function() {
+    assert.equal(
+      wrap('Highlights:\n First\n Second\n Third', { indent: '*' }),
+      '*Highlights:\n* First\n* Second\n* Third'
+    );
+  });
 });

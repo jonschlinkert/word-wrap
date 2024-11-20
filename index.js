@@ -43,11 +43,19 @@ module.exports = function(str, options) {
 
   var re = new RegExp(regexString, 'g');
   var lines = str.match(re) || [];
+  // The regex split will take whitespace from the start of next line,
+  // and put it on the end of the previous one. Need to move that back.
+  var extraWhitespace = '';
   var result = indent + lines.map(function(line) {
-    if (line.slice(-1) === '\n') {
-      line = line.slice(0, line.length - 1);
+    var fullLine = extraWhitespace + line;
+    var match = line.match(/^(.+)\n([^\S\n]*)$/s);
+    if (match) {
+      fullLine = extraWhitespace + match[1];
+      extraWhitespace = match[2];
+    } else {
+      extraWhitespace = '';
     }
-    return escape(line);
+    return escape(fullLine);
   }).join(newline);
 
   if (options.trim === true) {
