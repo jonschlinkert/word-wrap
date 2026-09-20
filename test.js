@@ -52,6 +52,11 @@ describe('wrap', function () {
     assert.equal(wrap('foo foo.  bar', {width:8, trim: true}), '  foo foo.\n  bar');
   });
 
+  it('should preserve blank lines when cut is true', function() {
+    assert.equal(wrap('a\n\nb', {indent: '', cut: true}), 'a\n\nb');
+    assert.equal(wrap('abcdef\n\nghijkl', {indent: '', width: 3, cut: true}), 'abc\ndef\n\nghi\njkl');
+  });
+
   it('should cut one long word', function() {
     assert.equal(wrap('Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious');
   });

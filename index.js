@@ -36,6 +36,22 @@ module.exports = function(str, options) {
     ? options.escape
     : identity;
 
+  // cut:true uses /.{1,width}/g, and `.` does not match newlines, so
+  // embedded newlines would be dropped. Wrap each line independently.
+  if (options.cut === true && str.indexOf('\n') !== -1) {
+    var lineOpts = {};
+    for (var key in options) {
+      if (Object.prototype.hasOwnProperty.call(options, key)) {
+        lineOpts[key] = options[key];
+      }
+    }
+    // Avoid re-entering this branch on lines that contain no newlines.
+    // (lines from split never contain \n)
+    return str.split('\n').map(function(line) {
+      return module.exports(line, lineOpts);
+    }).join('\n');
+  }
+
   var regexString = '.{1,' + width + '}';
   if (options.cut !== true) {
     regexString += '([\\s\u200B]+|$)|[^\\s\u200B]+?([\\s\u200B]+|$)';
