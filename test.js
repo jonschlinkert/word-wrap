@@ -67,3 +67,25 @@ describe('wrap', function () {
     );
   });
 });
+
+  it('should wrap based on visible width ignoring ANSI color codes:', function () {
+    var green = '\u001b[32m';
+    var red = '\u001b[31m';
+    var reset = '\u001b[39m';
+    var input = green + 'this' + reset + ' ' + red + 'is' + reset + ' a long string';
+    // visible: "this is a long string" — width 10 should wrap around visible cols
+    var out = wrap(input, {width: 10, trim: true});
+    // Each line's visible length should be <= 10
+    out.split('\n').forEach(function (line) {
+      var visible = line.replace(/\u001b\[[0-9;]*m/g, '').replace(/^  /, '');
+      assert.ok(visible.length <= 10, 'line too long: ' + JSON.stringify(line) + ' visible=' + visible.length);
+    });
+    // ANSI codes must be preserved
+    assert.ok(out.indexOf(green) !== -1);
+    assert.ok(out.indexOf(red) !== -1);
+    // Without ANSI awareness the first "line" would include escape bytes and wrap early
+    assert.notEqual(
+      wrap(input, {width: 10, trim: true}),
+      wrap(input.replace(/\u001b\[[0-9;]*m/g, ''), {width: 10, trim: true})
+    );
+  });
