@@ -56,6 +56,34 @@ describe('wrap', function () {
     assert.equal(wrap('Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious');
   });
 
+  it('should preserve blank lines when cutting source text', function() {
+    var source = 'function example() {\n\n  return true;\n\n\n}';
+    assert.equal(wrap(source, {indent: '', cut: true}), source);
+    assert.equal(wrap('a\n\nb', {indent: '', cut: true}), 'a\n\nb');
+  });
+
+  it('should preserve blank lines next to width boundaries when cutting', function() {
+    assert.equal(wrap('abcdef\n\nghij', {indent: '', width: 3, cut: true}),
+      'abc\ndef\n\nghi\nj');
+    assert.equal(wrap('\n\nabc\n\ndef', {indent: '', width: 3, cut: true}),
+      '\n\nabc\n\ndef');
+  });
+
+  it('should format and escape blank cut lines like other lines', function() {
+    var lines = [];
+    assert.equal(wrap('abc\n\ndef', {
+      indent: '>',
+      newline: '|>',
+      width: 3,
+      cut: true,
+      escape: function(line) {
+        lines.push(line);
+        return '[' + line + ']';
+      }
+    }), '>[abc]|>[]|>[def]');
+    assert.deepEqual(lines, ['abc', '', 'def']);
+  });
+
   it('should cut long words', function() {
     assert.equal(wrap('Supercalifragilisticexpialidocious and Supercalifragilisticexpialidocious', {width:24, cut:true}), '  Supercalifragilisticexpi\n  alidocious and Supercali\n  fragilisticexpialidociou\n  s');
   });

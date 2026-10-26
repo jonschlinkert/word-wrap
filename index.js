@@ -39,6 +39,8 @@ module.exports = function(str, options) {
   var regexString = '.{1,' + width + '}';
   if (options.cut !== true) {
     regexString += '([\\s\u200B]+|$)|[^\\s\u200B]+?([\\s\u200B]+|$)';
+  } else {
+    regexString += '\\n?|\\n';
   }
 
   var re = new RegExp(regexString, 'g');
